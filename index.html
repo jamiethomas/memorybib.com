@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app lang="en">
+<html ng-app="app" lang="en">
 
 <head>
 
@@ -11,13 +11,14 @@
 
     <title>Memory Bib - RunForHospice.org</title>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
-
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/landing-page.css" rel="stylesheet">
+
+    <!-- Site Specific CSS -->
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -33,7 +34,7 @@
 
 </head>
 
-<body>
+<body ng-controller="mainController">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
@@ -46,7 +47,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand topnav" href="#">Memory Bib</a>
+                <a class="navbar-brand topnav" href="#">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -67,44 +68,12 @@
         <!-- /.container -->
     </nav>
 
-
-    <!-- Header -->
-    <a name="about"></a>
-    <div class="intro-header">
-        <div class="container">
-
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="intro-message">
-                        <h1>#MemoryBib</h1>
-                        <h3>Brought to you by <a href="http://runforhospice.org">RunForHospice.org</a></h3>
-                        <hr class="intro-divider">
-                        <input class="memory-bib-prompt" type="text" ng-model="name" placeholder="Enter a name here">
-                        <div class="memory-bib">
-                          <h1 class="memory-bib-text">{{name}}</h1>
-                        </div>
-                        <!-- <ul class="list-inline intro-social-buttons">
-                            <li>
-                                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                            </li>
-                            <li>
-                                <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                            </li>
-                            <li>
-                                <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
-                            </li>
-                        </ul> -->
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.container -->
-
+    <div id="main">
+      <!-- angular templating -->
+      <!-- this is where content will be injected -->
+      <div ng-view></div>
     </div>
-    <!-- /.intro-header -->
 
-    <!-- Page Content -->
 
 	<a  name="services"></a>
     <div class="content-section-a hidden">
@@ -231,10 +200,17 @@
     </footer>
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    <script src="js/vendor/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+
+    <!-- Angular.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.js"></script>
+
+    <!-- Custom script -->
+    <script src="js/app.js"></script>
 
 </body>
 
