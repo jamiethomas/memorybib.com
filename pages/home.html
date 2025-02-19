@@ -22,9 +22,20 @@
                             <a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>
                         </li>
                     </ul> -->
+                    <!-- push a new message onto the array -->
+                  <form ng-submit="addMessage()">
+                    <button class="btn btn-default" type="submit">Save Memory Bib</button>
+                  </form>
+
+                  <div ng-repeat="n in names">
+                    <button class="btn btn-default" ng-click="$parent.name = n.text">{{ n.text }}</button>
+                    <button class="btn btn-default" type="button" ng-click="removeMessage(n)">Delete Memory Bib</button>
+                  </div>
                 </div>
             </div>
         </div>
+
+
 
     </div>
     <!-- /.container -->
