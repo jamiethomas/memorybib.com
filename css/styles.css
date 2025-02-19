@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+body {
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/memory-bib-bg.jpg) no-repeat center center;
+    @media print {
+        background: none;
+    }
+    background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.page-header {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+.page-header h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 4em;
+    color: white;
+}
+
+.page-header h3 {
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    color: white;
+}
+
+.page-header a {
+    color: white;
+    text-decoration: underline;
+}
+
+.page-divider {
+    text-align: center;
+    color: #f8f8f8;
+    width: 50%;
+    height: 1px;
+    max-width: 697px;
+}
+
+.name-input {
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.memory-bib {
+    border-radius: 24px; /* Adjust as needed */
+    position: relative;
+    width: 630px;
+    height: 500px;
+    background: url('/img/memory-bib.png') no-repeat center center;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+    overflow: hidden;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.memory-bib span {
+    margin-top: 80px;
+    display: block;
+    max-width: 80%;
+    max-height: 60%;
+    overflow: hidden;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.print-button {
+    margin-top: 20px;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .memory-bib {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    .memory-bib span {
+        visibility: visible;
+    }
+}
