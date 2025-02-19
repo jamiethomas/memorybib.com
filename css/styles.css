@@ -60,7 +60,7 @@ body {
     position: relative;
     width: 630px;
     height: 500px;
-    background: url('/img/memory-bib.png') no-repeat center center;
+    background: url(../img/memory-bib.png) no-repeat center center;
     background-size: contain;
     display: flex;
     align-items: center;
