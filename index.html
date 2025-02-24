@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="css/styles.css" />
     </head>
     <body>
-        <div x-data="{name: ''}" class="page-container">
+        <div x-data="{names: ['']}" class="page-container">
             <div class="page-header">
                 <h1>#MemoryBib2025</h1>
                 <h3>
@@ -30,18 +30,41 @@
                 </h3>
             </div>
             <hr class="page-divider" />
-            <input
-                class="name-input"
-                x-model="name"
-                type="text"
-                id="textInput"
-                placeholder="Enter name..."
-            />
+            <div class="buttons">
+                <button
+                    x-show="names.join('') !=='' && names.length < 3"
+                    @click="names.push('')"
+                    class="add-button"
+                >
+                    <i class="fa fa-plus"></i>
+                </button>
+                <button
+                    x-show="names.length > 1"
+                    @click="names.pop()"
+                    class="add-button"
+                >
+                    <i class="fa fa-minus"></i>
+                </button>
+            </div>
+
+            <template x-for="(name, index) in names" :key="index">
+                <input
+                    class="name-input"
+                    x-model="names[index]"
+                    type="text"
+                    id="textInput"
+                    :placeholder="'Line ' + index + '...'"
+                />
+            </template>
             <div class="memory-bib" id="graphicText">
-                <span x-text="name"></span>
+                <ul class="bib-names">
+                    <template x-for="name in names">
+                        <li class="bib-name" x-text="name"></li>
+                    </template>
+                </ul>
             </div>
             <button
-                x-show="name.length > 0"
+                x-show="names.join('').length > 0"
                 data-tooltip="Print your memory bib."
                 class="print-button"
                 onclick="window.print()"

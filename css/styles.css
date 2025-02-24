@@ -51,15 +51,15 @@ body {
 }
 
 .name-input {
-    margin-top: 20px;
     max-width: 600px;
 }
 
 .memory-bib {
     border-radius: 24px; /* Adjust as needed */
-    position: relative;
+    position: static;
     width: 630px;
     height: 500px;
+    min-height: 500px;
     background: url(../img/memory-bib.png) no-repeat center center;
     background-size: contain;
     display: flex;
@@ -83,6 +83,15 @@ body {
     white-space: normal;
 }
 
+.bib-names {
+    margin-top: 70px;
+}
+.bib-names li {
+    list-style: none;
+    margin-left: -50px;
+    margin-top: -10px;
+}
+
 .print-button {
     margin-top: 20px;
 }
@@ -102,7 +111,7 @@ body {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
-    .memory-bib span {
+    .bib-names li {
         visibility: visible;
     }
 }
