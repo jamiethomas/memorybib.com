@@ -14,65 +14,71 @@
         />
         <script defer src="https://use.fontawesome.com/e03418bff9.js"></script>
         <link rel="stylesheet" href="css/styles.css" />
+        <script src="index.js"></script>
     </head>
     <body>
-        <div x-data="{names: ['']}" class="page-container">
-            <div class="page-header">
-                <h1>#MemoryBib2025</h1>
-                <h3>
-                    Brought to you by
-                    <a
-                        href="http://runforhospice.org"
-                        title="Go to www.runforhospice.org"
-                        target="_blank"
-                        >RunForHospice.org</a
+        <main>
+            <div x-data="bibForm" class="page-container">
+                <div class="page-header">
+                    <h1>#MemoryBib2025</h1>
+                    <h3>
+                        Brought to you by
+                        <a
+                            href="http://runforhospice.org"
+                            title="Go to www.runforhospice.org"
+                            target="_blank"
+                            >RunForHospice.org</a
+                        >
+                    </h3>
+                </div>
+                <hr class="page-divider" />
+                <!-- Buttons to Add/Remove Name Fields -->
+                <div class="buttons">
+                    <button
+                        x-show="names.join('') !=='' && names.length < 3"
+                        @click="names.push('')"
+                        class="add-button"
+                        title="Add a new name field"
                     >
-                </h3>
-            </div>
-            <hr class="page-divider" />
-            <div class="buttons">
-                <button
-                    x-show="names.join('') !=='' && names.length < 3"
-                    @click="names.push('')"
-                    class="add-button"
-                >
-                    <i class="fa fa-plus"></i>
-                </button>
-                <button
-                    x-show="names.length > 1"
-                    @click="names.pop()"
-                    class="add-button"
-                >
-                    <i class="fa fa-minus"></i>
-                </button>
-            </div>
+                        <i class="fa fa-plus"></i>
+                    </button>
+                    <button
+                        x-show="names.length > 1"
+                        @click="names.pop()"
+                        class="add-button"
+                        title="Remove the last name field"
+                    >
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>
 
-            <template x-for="(name, index) in names" :key="index">
-                <input
-                    class="name-input"
-                    x-model="names[index]"
-                    type="text"
-                    id="textInput"
-                    :placeholder="'Line ' + index + '...'"
-                />
-            </template>
-            <div class="memory-bib" id="graphicText">
-                <ul class="bib-names">
-                    <template x-for="name in names">
-                        <li class="bib-name" x-text="name"></li>
-                    </template>
-                </ul>
+                <template x-for="(name, index) in names" :key="index">
+                    <input
+                        class="name-input"
+                        x-model="names[index]"
+                        type="text"
+                        id="textInput"
+                        :placeholder="placeHolderText(index)"
+                    />
+                </template>
+                <div class="memory-bib" id="graphicText">
+                    <ul class="bib-names">
+                        <template x-for="name in names">
+                            <li class="bib-name" x-text="name"></li>
+                        </template>
+                    </ul>
+                </div>
+                <button
+                    x-show="names.join('').length > 0"
+                    data-tooltip="Print your memory bib."
+                    class="print-button"
+                    onclick="window.print()"
+                >
+                    <i class="fa fa-print"></i>
+                    Print
+                </button>
             </div>
-            <button
-                x-show="names.join('').length > 0"
-                data-tooltip="Print your memory bib."
-                class="print-button"
-                onclick="window.print()"
-            >
-                <i class="fa fa-print"></i>
-                Print
-            </button>
-        </div>
+        </main>
         <footer>&copy 2025 RunForHospice.org</footer>
     </body>
 </html>
