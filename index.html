@@ -94,7 +94,7 @@
                     </ul>
                 </div>
                 <button
-                    x-show="names.join('').length > 0"
+                    x-show="names.slice(0, lineCount).join('').length > 0"
                     data-tooltip="Print your memory bib."
                     class="print-button"
                     onclick="window.print()"
