@@ -86,7 +86,9 @@
 
                 <div class="memory-bib" id="graphicText">
                     <ul class="bib-names">
-                        <template x-for="name in names">
+                        <template
+                            x-for="(name, index) in names.slice(0, lineCount)"
+                        >
                             <li class="bib-name" x-text="name"></li>
                         </template>
                     </ul>
