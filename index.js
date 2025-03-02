@@ -1,10 +1,11 @@
 document.addEventListener('alpine:init', () => {
     Alpine.data('bibForm', () => ({
-        names: [''],
+        names: ['', '', ''],
+        lineCount: 1,
 
         placeHolderText(index) {
             let lineNumber = index + 1;
-            return `Line ${lineNumber} text...`;
+            return `Line ${lineNumber}...`;
         },
 
         validateForm() {

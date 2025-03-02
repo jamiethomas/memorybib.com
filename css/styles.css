@@ -50,7 +50,21 @@ body {
     max-width: 697px;
 }
 
-.name-input {
+fieldset {
+    border: 1px solid #f8f8f8;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.line-count-label {
+    color: white;
+    font-size: 0.8em;
+}
+
+.line-text {
+    margin-top: 5px;
     max-width: 600px;
 }
 
