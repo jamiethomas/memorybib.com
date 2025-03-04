@@ -93,15 +93,26 @@
                         </template>
                     </ul>
                 </div>
-                <button
-                    x-show="names.slice(0, lineCount).join('').length > 0"
-                    data-tooltip="Print your memory bib."
-                    class="print-button"
-                    onclick="window.print()"
-                >
-                    <i class="fa fa-print"></i>
-                    Print
-                </button>
+                <div>
+                    <button
+                        x-show="names.slice(0, lineCount).join('').length > 0"
+                        data-tooltip="Print your memory bib."
+                        class="print-button"
+                        onclick="window.print()"
+                    >
+                        <i class="fa fa-print"></i>
+                        Print
+                    </button>
+                    <button
+                        type="reset"
+                        x-show="names.slice(0, lineCount).join('').length > 0"
+                        data-tooltip="Reset Form"
+                        @click="resetForm()"
+                    >
+                        <i class=""></i>
+                        Reset
+                    </button>
+                </div>
             </div>
         </main>
         <!-- <footer>&copy 2025 RunForHospice.org</footer> -->

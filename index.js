@@ -3,6 +3,11 @@ document.addEventListener('alpine:init', () => {
         names: ['', '', ''],
         lineCount: 1,
 
+        resetForm() {
+            this.names = ['', '', ''];
+            this.lineCount = 1;
+        },
+
         placeHolderText(index) {
             let lineNumber = index + 1;
             return `Line ${lineNumber}...`;
