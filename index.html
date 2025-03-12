@@ -2,7 +2,10 @@
 <html lang="en" data-theme="light">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
         <title>RunForHospice.org - Memory Bib</title>
         <script
             defer
@@ -48,39 +51,47 @@
                                 :placeholder="placeHolderText(index)"
                             />
                         </template>
-                        <br />
-                        <label class="line-count-label" style="display: inline"
-                            >Lines:&nbsp;</label
-                        >
-                        <input
-                            type="radio"
-                            id="one"
-                            value="1"
-                            name="lineCount"
-                            x-model="lineCount"
-                            title="One line"
-                        />
-                        <label class="line-count-label" htmlFor="one">1</label>
-                        <input
-                            type="radio"
-                            id="two"
-                            value="2"
-                            name="lineCount"
-                            x-model="lineCount"
-                            title="Two lines"
-                        />
-                        <label class="line-count-label" htmlFor="two">2</label>
-                        <input
-                            type="radio"
-                            id="three"
-                            value="3"
-                            name="lineCount"
-                            x-model="lineCount"
-                            title="Three lines"
-                        />
-                        <label class="line-count-label" htmlFor="three"
-                            >3</label
-                        >
+
+                        <div>
+                            <label
+                                class="line-count-label"
+                                style="display: inline"
+                                >Lines:&nbsp;</label
+                            >
+                            <input
+                                type="radio"
+                                id="one"
+                                value="1"
+                                name="lineCount"
+                                x-model="lineCount"
+                                title="One line"
+                            />
+                            <label class="line-count-label" htmlFor="one"
+                                >1</label
+                            >
+                            <input
+                                type="radio"
+                                id="two"
+                                value="2"
+                                name="lineCount"
+                                x-model="lineCount"
+                                title="Two lines"
+                            />
+                            <label class="line-count-label" htmlFor="two"
+                                >2</label
+                            >
+                            <input
+                                type="radio"
+                                id="three"
+                                value="3"
+                                name="lineCount"
+                                x-model="lineCount"
+                                title="Three lines"
+                            />
+                            <label class="line-count-label" htmlFor="three"
+                                >3</label
+                            >
+                        </div>
                     </fieldset>
                 </div>
 
