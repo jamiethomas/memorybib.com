@@ -18,6 +18,9 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    padding: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
 }
 
 .page-header {
@@ -28,12 +31,14 @@ body {
 .page-header h1 {
     margin: 0;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
-    font-size: 3.5em;
+    font-size: 2rem;
+    margin-bottom: 1rem;
     color: white;
 }
 
 .page-header h3 {
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+    font-size: 1.2rem;
     color: white;
 }
 
@@ -51,16 +56,31 @@ body {
 }
 
 fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: 8px;
     border: 1px solid #f8f8f8;
-    border-radius: 10px;
-    padding: 10px;
     margin: 10px;
     background: rgba(0, 0, 0, 0.4);
     min-width: 350px;
-    max-width: 600px;
     /* Make this centered */
     margin-left: auto;
     margin-right: auto;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+fieldset > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .line-count-label {
@@ -71,12 +91,16 @@ fieldset {
 .line-text {
     margin-top: 5px;
     max-width: 600px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
 }
 
 .memory-bib {
     border-radius: 24px; /* Adjust as needed */
     position: static;
-    width: 630px;
+    width: 100%;
+    max-width: 500px;
     height: 500px;
     min-height: 500px;
     background: url(../img/memory-bib.png) no-repeat center center;
@@ -90,6 +114,9 @@ fieldset {
     color: black;
     overflow: hidden;
     font-family: 'Permanent Marker', cursive;
+    margin: 0 auto;
+    padding: 1rem;
+    margin-top: 1rem; /* Reduced space between fieldset and memory-bib */
 }
 
 .memory-bib span {
@@ -135,8 +162,98 @@ fieldset {
         margin: auto;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
     }
     .bib-names li {
         visibility: visible;
+    }
+}
+
+/* Mobile-first responsive styles */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem; /* Reduced from default */
+}
+
+/* Radio button group styling */
+
+/* Button styling */
+button {
+    margin: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    width: auto;
+    min-width: 120px;
+}
+
+/* Media Queries for larger screens */
+@media screen and (min-width: 768px) {
+    .page-header h1 {
+        font-size: 3rem;
+    }
+
+    .page-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .memory-bib {
+        max-width: 700px;
+    }
+
+    .line-text {
+        max-width: 400px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) {
+    button {
+        padding: 1rem 2rem;
+        margin: 1rem 0.5rem;
+    }
+
+    input[type='radio'] + label {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Safe area adjustments for modern mobile devices */
+@supports (padding: max(0px)) {
+    .page-container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    fieldset {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .line-text {
+        max-width: 100%;
+    }
+
+    .container {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem; /* Even smaller on mobile */
+    }
+
+    .memory-bib {
+        margin-top: 0.5rem; /* Smaller gap on mobile */
     }
 }
