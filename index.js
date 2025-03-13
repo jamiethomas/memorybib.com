@@ -2,6 +2,7 @@ document.addEventListener('alpine:init', () => {
     Alpine.data('bibForm', () => ({
         names: ['', '', ''],
         lineCount: 1,
+        currentYear: new Date().getFullYear(),
 
         resetForm() {
             this.names = ['', '', ''];
