@@ -98,13 +98,13 @@ fieldset > div {
 
 .line-count-label {
     color: white;
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 .line-text {
     margin-top: 5px;
     max-width: 600px;
-    width: 100%;
+    width: 90%;
     max-width: 300px;
     margin-bottom: 0.5rem;
     font-size: 1.2rem;
